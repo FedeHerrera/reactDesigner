@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectSelection from './views/projectSelection';
+import ProjectView from './views/projectView';
 import './App.module.css';
-import ProjectSelection from './views/projectView';
 
 function App() {
   return (
-    <div className="App">
-            <ProjectSelection />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProjectSelection />} />
+        <Route path="/project/:projectName" element={<ProjectView />} />
+      </Routes>
+    </Router>
   );
 }
 
